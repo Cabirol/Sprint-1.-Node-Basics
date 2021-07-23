@@ -28,16 +28,18 @@ console.log(`${ElMeuNom(nomUsuari, cognom1, cognom2)}`);
 
 //Nivell 3, exercici 1 *************************************************
 
-function ComptarDeZeroA(Número){
-	for(var j = 0; j<Número+1; j++){
-		console.log(j);
-	}
-}
-
 var matriu = new Array(10);
 
 for(var i = 0; i<matriu.length; i++){
-	matriu[i]= ComptarDeZeroA(9);
+	matriu[i] = function() {
+		for (var j = 0; j<10; j++){
+			console.log(j);
+		}
+	}
+}
+
+for(i = 0; i<matriu.length; i++){
+	matriu[i]();
 }
 
 //Nivell 3, exercici 2 *************************************************
