@@ -42,6 +42,6 @@ for(var i = 0; i<matriu.length; i++){
 
 //Nivell 3, exercici 2 *************************************************
 
-var variable = (function(nom){
+var imprimirNom2 = (function(nom){
 	console.log(nom);
 })(nomUsuari);
