@@ -105,6 +105,6 @@ let getEmployeeMillorat = id_employee => (					//Modifiquem la funció getEmploy
 );
 
 getEmployeeMillorat(4)								//Ara hauria de sortir un error, ja que no hem definit id = 4.
-.then(resolve => getSalary(resolve))
-.then(resolve => console.log(resolve))
-.catch(error => console.log(error));
+	.then(resolve => getSalary(resolve))
+	.then(resolve => console.log(resolve))
+	.catch(error => console.log(error));
