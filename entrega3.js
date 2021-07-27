@@ -3,7 +3,7 @@
 let promesa_1 = new Promise(function(resolve, reject) {
 	
 	setTimeout(() => {				//simulem operació assíncrona amb un timeout
-		let correcte = true;		//simulem que la operació ha anat bé amb true (o malament amb false)
+		let correcte = true;			//simulem que la operació ha anat bé amb true (o malament amb false)
       	if (correcte) {
         	resolve('Tot ha anat bé');
       	} else {
@@ -13,8 +13,8 @@ let promesa_1 = new Promise(function(resolve, reject) {
 });
 
 promesa_1.then(
-  result => alert(result), 
-  error => alert(error) 
+  result => console.log(result), 
+  error => console.log(error) 
 );
 
 //Nivell 1, exercici 2 ************************************************************************
