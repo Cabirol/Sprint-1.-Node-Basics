@@ -67,12 +67,7 @@ let getEmployee = id_employee => (					//aquesta és la funció fletxa que al re
 	})
 );
 
-/*
-getEmployee(1).then(							//un exemple per veure que getEmployee funciona. 
-  result => console.log(result), 
-  error => console.log(error) 
-);
-*/
+//getEmployee(1).then( result => console.log(result) );
 
 //Nivell 2, exercici 2 **********************************************************************************************
 
@@ -88,20 +83,28 @@ let getSalary = employee_object => (					//aquesta és la funció fletxa que al 
 	})
 );
 
-/*
-getSalary(employees[0]).then(							//un exemple per veure que getSalary funciona.
-  result => console.log(result), 
-  error => console.log(error) 
-);
-*/
+//getSalary(employees[0]).then( result => console.log(result) );
 
 //Nivell 2, exercici 3 ************************************************************************************************
 
-getEmployee(1).then(
-		result => getSalary(result).then(
-			result => console.log(result)
-		)
-);
+getEmployee(1)
+	.then(result => getSalary(result))
+	.then(result => console.log(result));
 
 //Nivell 3, exercici 1 ************************************************************************************************
 
+let getEmployeeMillorat = id_employee => (					//Modifiquem la funció getEmployee i l'anomenem getEmployeeMillorat...
+	new Promise ( function(resolve, reject) {			
+  		setTimeout( (arr, value) => {					//...no només perquè la lectura sigui menys farragosa (que també)...
+  			for (var i=0; i<arr.length; i++) {
+					if (arr[i].id == value) resolve (arr[i]);
+			}
+			reject (new Error ("ids només poden ser entre 1 i 3"));	//...sino per donar sentit a reject (saltarà error si posem un id fora de rang).
+		} , 1000, employees, id_employee);
+	})
+);
+
+getEmployeeMillorat(4)								//Ara hauria de sortir un error, ja que no hem definit id = 4.
+.then(resolve => getSalary(resolve))
+.then(resolve => console.log(resolve))
+.catch(error => console.log(error));
