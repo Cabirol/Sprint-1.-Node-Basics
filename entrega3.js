@@ -68,10 +68,40 @@ let getEmployee = id_employee => (					//aquesta és la funció fletxa que al re
 );
 
 /*
-getEmployee(1).then(							//un exemple per veure que getEmployee funciona.
+getEmployee(1).then(							//un exemple per veure que getEmployee funciona. 
   result => console.log(result), 
   error => console.log(error) 
 );
 */
 
 //Nivell 2, exercici 2 **********************************************************************************************
+
+let getSalary = employee_object => (					//aquesta és la funció fletxa que al rebre un objecte de employees...
+	new Promise ( function(resolve, reject) {			//...retorna un objecte promesa...
+  		setTimeout(() => resolve(				//...mitjançant un timeout per fer veure que triga una mica...
+			( (arr, obj) => {				//...i aquí s'executa la promesa (busca la propietat salary igualant l'id de salaries amb el de employees).
+  				for (var i=0; i<arr.length; i++) {
+					if (arr[i].id == obj.id) return arr[i].salary;
+				}
+			})(salaries, employee_object)
+		), 1000);
+	})
+);
+
+/*
+getSalary(employees[0]).then(							//un exemple per veure que getSalary funciona.
+  result => console.log(result), 
+  error => console.log(error) 
+);
+*/
+
+//Nivell 2, exercici 3 ************************************************************************************************
+
+getEmployee(1).then(
+		result => getSalary(result).then(
+			result => console.log(result)
+		)
+);
+
+//Nivell 3, exercici 1 ************************************************************************************************
+
