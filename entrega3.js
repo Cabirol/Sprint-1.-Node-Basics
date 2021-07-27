@@ -4,11 +4,11 @@ let promesa_1 = new Promise(function(resolve, reject) {
 	
 	setTimeout(() => {				//simulem operació assíncrona amb un timeout
 		let correcte = true;			//simulem que la operació ha anat bé amb true (o malament amb false)
-      	if (correcte) {
-        	resolve('Tot ha anat bé');
-      	} else {
-        	reject(new Error("Hi ha hagut un error"));
-      	}
+      		if (correcte) {
+        		resolve('Tot ha anat bé');
+      		} else {
+        		reject(new Error("Hi ha hagut un error"));
+      		}
 	}, 1000);
 });
 
