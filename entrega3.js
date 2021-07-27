@@ -19,3 +19,16 @@ promesa_1.then(
 
 //Nivell 1, exercici 2 ************************************************************************
 
+var funció_1 = (paràmetre, callback) => {
+	if (paràmetre == true){
+		callback("És veritat");
+	} else {
+		callback("És mentida");
+	}
+}
+
+funció_1(true, console.log);
+funció_1(false , console.log);
+
+//Nivell 2, exercici 1 **************************************************************************
+
