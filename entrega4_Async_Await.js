@@ -57,24 +57,25 @@ async function llista(id){
 
 //Nivell 2 Exercici 1 *************************************************************
 
-async function principal(){
+async function principal(prin){
     
-    let result = await auxiliar();
+    let result = await auxiliar(prin);
     console.log(result);
 
 }
 
-async function auxiliar(){
+async function auxiliar(paràmetre){
 
     let promise = new Promise((resolve, reject) => {
-        setTimeout(() => resolve("fet!"), 2000)
+        setTimeout(aux => {
+            if (aux == true) resolve("fet");
+            reject(new Error ("Hi ha hagut un error"));
+        }, 2000, paràmetre);
     });
     
     let result = await promise; 
     return result;
 }
-
-principal();
 
 //Nivell 3 Exercici 1 ************************************************************
 
