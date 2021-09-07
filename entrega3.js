@@ -56,15 +56,12 @@ let salaries = [{
 }];
 
 
-let getEmployee = id_employee => (					//aquesta és la funció fletxa que al rebre un id...
-	new Promise ( function(resolve, reject) {			//...retorna un objecte promesa...
-  		setTimeout(() => resolve(				//...mitjançant un timeout per fer veure que triga una mica...
-			( (arr, value) => {				//...i aquí s'executa la promesa (busca l'objecte dins d'un array (employees) a partir del seu id).
-  				for (var i=0; i<arr.length; i++) {
-					if (arr[i].id == value) return arr[i];
-				}
-			})(employees, id_employee)
-		), 1000);
+let getEmployee = id_employee => (					
+	new Promise ( function(resolve, reject) {			
+  		for (var i=0; i<employees.length; i++) {
+            if (employees[i].id == id_employee) resolve (employees[i]);
+        }
+        reject(new Error("No s'ha trobat cap empleat amb aquest id."));
 	})
 );
 
@@ -72,15 +69,12 @@ let getEmployee = id_employee => (					//aquesta és la funció fletxa que al re
 
 //Nivell 2, exercici 2 **********************************************************************************************
 
-let getSalary = employee_object => (					//aquesta és la funció fletxa que al rebre un objecte de employees...
-	new Promise ( function(resolve, reject) {			//...retorna un objecte promesa...
-  		setTimeout(() => resolve(				//...mitjançant un timeout per fer veure que triga una mica...
-			( (arr, obj) => {				//...i aquí s'executa la promesa (busca la propietat salary igualant l'id de salaries amb el de employees).
-  				for (var i=0; i<arr.length; i++) {
-					if (arr[i].id == obj.id) return arr[i].salary;
-				}
-			})(salaries, employee_object)
-		), 1000);
+let getSalary = employee_object => (					
+	new Promise ( function(resolve, reject) {									
+  		for (var i=0; i<salaries.length; i++) {
+			if (salaries[i].id == employee_object.id) resolve (salaries[i].salary);
+			}
+        reject(new Error("No s'ha trobat aquest objecte d'Empleat"));
 	})
 );
 
