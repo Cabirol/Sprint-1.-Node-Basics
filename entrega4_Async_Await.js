@@ -44,12 +44,13 @@ let getSalary = employee_object => (
 //Nivell 1, exercici 2 ***********************************************************************************
 
 async function llista(id){
-    getEmployee(id)
-        .then(result => console.log(result.name))
+
+    let result = await getEmployee(id);
+    console.log(result.name);
+
+    result = await getSalary(result);
+    console.log(result);
     
-    getEmployee(id)
-        .then(result => getSalary(result))
-        .then(result => console.log(result))
 }
 
 //llista(2);        //És un exemple.
