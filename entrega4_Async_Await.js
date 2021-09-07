@@ -59,3 +59,28 @@ async function llista(id){
 }
 
 //llista(2);        //És un exemple.
+
+//Nivell 2 Exercici 1 *************************************************************
+
+async function principal(){
+    
+    let result = await auxiliar();
+    console.log(result);
+
+}
+
+async function auxiliar(){
+
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("fet!"), 2000)
+    });
+    
+    let result = await promise; 
+    return result;
+}
+
+principal();
+
+//Nivell 3 Exercici 1 ************************************************************
+
+
