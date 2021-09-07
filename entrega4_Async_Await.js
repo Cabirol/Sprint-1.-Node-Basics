@@ -22,3 +22,40 @@ let salaries = [{
     salary: 2000
 }];
 
+let getEmployee = id_employee => (					
+	new Promise ( function(resolve, reject) {			
+  		resolve(				
+			 ((arr, value) => {				
+  				for (var i=0; i<arr.length; i++) {
+					if (arr[i].id == value) return arr[i];
+				}
+			})(employees, id_employee)
+		)
+	})
+);
+
+let getSalary = employee_object => (					
+	new Promise ( function(resolve, reject) {			
+  		resolve(				
+			( (arr, obj) => {				
+  				for (var i=0; i<arr.length; i++) {
+					if (arr[i].id == obj.id) return arr[i].salary;
+				}
+			})(salaries, employee_object)
+		)
+	})
+);
+
+
+//Nivell 1, exercici 2 ***********************************************************************************
+
+async function llista(id){
+    getEmployee(id)
+        .then(result => console.log(result.name))
+    
+    getEmployee(id)
+        .then(result => getSalary(result))
+        .then(result => console.log(result))
+}
+
+//llista(2);        //És un exemple.
