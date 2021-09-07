@@ -58,7 +58,7 @@ async function llista(id){
 //Nivell 2 Exercici 1 *************************************************************
 
 async function principal(prin){
-    
+
     let result = await auxiliar(prin);
     console.log(result);
 
@@ -75,8 +75,9 @@ async function auxiliar(paràmetre){
     
     let result = await promise; 
     return result;
+
 }
 
-//Nivell 3 Exercici 1 ************************************************************
+//Nivell 3 Exercici 1 **************************************************************
 
-
+principal(false).catch(console.log);  //No em queda del tot clar si havia de fer això, afegir try/catch a les funcions de l'exercici anterior o alguna altra cosa.
