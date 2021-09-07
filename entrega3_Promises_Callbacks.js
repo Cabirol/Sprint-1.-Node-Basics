@@ -1,22 +1,18 @@
 //Nivell 1, exercici 1 ***********************************************************************
 
-var funció_1 = paràmetre_1 => {
-    let promesa = new Promise(function(resolve, reject) {
-      		if (paràmetre_1 == true) {
+var funcio_1 = parametre_1 => {
+    return new Promise(function(resolve, reject) {
+      		if (parametre_1 == true) {
         		resolve('Tot ha anat bé');
       		} else {
         		reject(new Error("Hi ha hagut un error"));
       		}
     });
-
-    return promesa.then(
-        result => console.log(result), 
-        error => console.log(error) 
-    );
 }
 
-funció_1(true);
-funció_1(false);
+funcio_1
+    .then(res => console.log(res))
+    .catch(err => console.log(err.message))
 
 //Nivell 1, exercici 2 ************************************************************************
 
