@@ -12,7 +12,7 @@ function exercici1(){
 
 //Nivell 1, Exercici 2 *************************************
 
-fs = require('fs');
+const fs = require('fs');
 
 function crearFitxerNom(nom){
     fs.writeFile('nom_usuari.txt', nom, (err) => {
