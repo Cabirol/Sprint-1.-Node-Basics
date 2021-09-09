@@ -1,0 +1,14 @@
+{
+  "name": "exercici6_testing",
+  "version": "1.0.0",
+  "description": "Projecte per a introduïr-se al testing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Daniel López Acevedo",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.1.1"
+  }
+}
