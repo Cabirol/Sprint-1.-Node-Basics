@@ -4,7 +4,8 @@
   "description": "Projecte per a introduïr-se al testing.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test1": "jest ./_tests_/Operacions.test.js"
   },
   "author": "Daniel López Acevedo",
   "license": "ISC",

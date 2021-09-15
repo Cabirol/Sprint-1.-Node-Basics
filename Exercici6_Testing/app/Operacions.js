@@ -6,9 +6,6 @@ function sumar(){
     return suma;
 }
 
-module.exports = { sumar};
-
-
 function restar(minuend, substraend){
     return minuend - substraend;
 }
@@ -25,3 +22,5 @@ function multiplicar(){
 function dividir(dividend, divisor){
     return dividend/divisor;
 }
+
+module.exports = {sumar, restar, multiplicar, dividir};
