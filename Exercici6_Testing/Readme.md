@@ -13,7 +13,7 @@ npm install jest
  npm run test
  ````
  
-The above formatting is used to create a box which can display code or command in a well formatted manner.
+Petit canvi per a provar el GitHub deskop.
 
 
 ## Usage
