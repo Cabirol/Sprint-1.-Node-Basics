@@ -15,6 +15,8 @@ npm install jest
  
 Petit canvi per a provar el GitHub deskop.
 
+Segon petit canvi per a provar el commit des de visual studio.
+
 
 ## Usage
 
