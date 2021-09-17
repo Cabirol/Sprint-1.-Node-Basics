@@ -10,6 +10,6 @@
   "author": "Daniel López Acevedo",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^27.1.1"
+    "jest": "^27.2.0"
   }
 }
