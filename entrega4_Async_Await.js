@@ -23,20 +23,18 @@ let salaries = [{
 }];
 
 let getEmployee = id_employee => new Promise ( function(resolve, reject) {			
-  		for (var i=0; i<employees.length; i++) {
-            		if (employees[i].id == id_employee) resolve (employees[i]);
-        	}
-        	reject(new Error("No s'ha trobat cap empleat amb aquest id."));
-	});
+  	for (var i=0; i<employees.length; i++) {
+        if (employees[i].id == id_employee) resolve (employees[i]);
+        }
+    reject(new Error("No s'ha trobat cap empleat amb aquest id."));
+});
 
-let getSalary = employee_object => (					
-	new Promise ( function(resolve, reject) {									
-  		for (var i=0; i<salaries.length; i++) {
-			if (salaries[i].id == employee_object.id) resolve (salaries[i].salary);
-		}
-        	reject(new Error("No s'ha trobat aquest objecte d'Empleat"));
-	})
-);
+let getSalary = employee_object => new Promise ( function(resolve, reject) {									
+  	for (var i=0; i<salaries.length; i++) {
+		if (salaries[i].id == employee_object.id) resolve (salaries[i].salary);
+	    }
+    reject(new Error("No s'ha trobat aquest objecte d'Empleat"));
+});
 
 
 //Nivell 1, exercici 2 ***********************************************************************************
@@ -62,18 +60,14 @@ async function principal(prin){
 
 }
 
-async function auxiliar(paràmetre){
+function auxiliar(paràmetre){
 
-    let promise = new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         setTimeout(aux => {
             if (aux == true) resolve("fet");
             reject(new Error ("Hi ha hagut un error"));
         }, 2000, paràmetre);
     });
-    
-    let result = await promise; 
-    return result;
-
 }
 
 //Nivell 3 Exercici 1 **************************************************************
