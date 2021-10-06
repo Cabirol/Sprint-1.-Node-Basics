@@ -10,9 +10,13 @@ var funcio_1 = parametre_1 => {
     });
 }
 
-funcio_1
+funcio_1(true)
     .then(res => console.log(res))
     .catch(err => console.log(err.message))
+
+funcio_1(false)
+	.then(res => console.log(res))
+	.catch(err => console.log(err.message))
 
 //Nivell 1, exercici 2 ************************************************************************
 
