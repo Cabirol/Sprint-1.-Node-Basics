@@ -22,17 +22,17 @@ let salaries = [{
     salary: 2000
 }];
 
-let getEmployee = id_employee => new Promise ( function(resolve, reject) {			
+let getEmployee = id_employee => new Promise (function(resolve, reject) {			
   	for (var i=0; i<employees.length; i++) {
         if (employees[i].id == id_employee) resolve (employees[i]);
-        }
+    }
     reject(new Error("No s'ha trobat cap empleat amb aquest id."));
 });
 
-let getSalary = employee_object => new Promise ( function(resolve, reject) {									
+let getSalary = employee_object => new Promise (function(resolve, reject) {									
   	for (var i=0; i<salaries.length; i++) {
 		if (salaries[i].id == employee_object.id) resolve (salaries[i].salary);
-	    }
+	}
     reject(new Error("No s'ha trobat aquest objecte d'Empleat"));
 });
 
