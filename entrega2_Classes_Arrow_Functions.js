@@ -42,50 +42,23 @@ class MtgCard{
 	}
 
 	info(){
-		throw new Error("Abstract Method has no implementation");
+		console.log(`Aquesta carta és un ${this.nom}, amb mana value ${this.cmc} i de color ${this.color}`);
 	}
 }
 
-class Artifact extends MtgCard{
-
-	info(){
-		console.log(`${this.nom} is a ${this.color} artifact with cmc of ${this.cmc}.`);
-	}
+function creacioCartes(_nom, _cmc, _color){
+	return Object.create(MtgCard.prototype, {
+		"nom" : {value: _nom},
+		"cmc":{value: _cmc},
+		"color":{value: _color}
+	});
 }
 
-class Creature extends MtgCard{
-	constructor(nom, cmc, color, power, toughness){
-		super(nom, cmc, color);
-		this.power = power;
-		this.toughness = toughness;
-	}
-
-	info(){
-		console.log(`${this.nom} is a ${this.power}/${this.toughness} ${this.color} creature with cmc of ${this.cmc}.`);
-	}
-}
-
-class Land extends MtgCard{
-	constructor(nom, cmc, color){
-		super(nom, cmc, color);
-		this.cmc = 0;
-		this.color = "colorless";
-	}
-
-	info(){
-		console.log(`${this.nom} is a land.`)
-	}
-}
-
-//Exemples:
-
-//var carta_0 = new MtgCard();    <--Dona error al ser implementat.
-
-var carta_1 = new Artifact("Black Lotus", 0, "colorless");
+carta_1 = creacioCartes("Black Lotus", 0, "incolor");
 carta_1.info();
 
-var carta_2 = new Creature("Snapcaster Mage", 2, "blue", 2, 1);
+carta_2 = creacioCartes("Snapcaster Mage", 2, "blau");
 carta_2.info();
 
-var carta_3 = new Land("Plains");
+carta_3 = creacioCartes("Path to Exile", 1, "blanc");
 carta_3.info();
