@@ -1,8 +1,8 @@
 //Nivell 1, exercici 1 ***********************************************************************
 
-var funcio_1 = parametre_1 => {
+var funcio_1 = _parametre => {
     return new Promise(function(resolve, reject) {
-      		if (parametre_1 == true) {
+      		if (_parametre == true) {
         		resolve('Tot ha anat bé');
       		} else {
         		reject(new Error("Hi ha hagut un error"));
@@ -20,16 +20,16 @@ funcio_1(false)
 
 //Nivell 1, exercici 2 ************************************************************************
 
-var funció_2 = (paràmetre_2, callback) => {
-	if (paràmetre_2 == true){
+var funcio_2 = (_parametre, callback) => {
+	if (_parametre == true){
 		callback("És veritat");
 	} else {
 		callback("És mentida");
 	}
 }
 
-funció_2(true, console.log);
-funció_2(false , console.log);
+funcio_2(true, console.log);
+funcio_2(false , console.log);
 
 //Nivell 2, exercici 1 *****************************************************************************************************
 
@@ -74,12 +74,12 @@ let getSalary = employee_object => new Promise (function(resolve, reject) {
 //Nivell 2, exercici 3 ************************************************************************************************
 
 getEmployee(1)
-	.then(result => getSalary(result))
-	.then(result => console.log(result));
+.then(result => getSalary(result))
+.then(result => console.log(result));
 
 //Nivell 3, exercici 1 ************************************************************************************************
 
 getEmployee(4)
-	.then(resolve => getSalary(resolve))
-	.then(resolve => console.log(resolve))
-	.catch(error => console.log(error));
+.then(resolve => getSalary(resolve))
+.then(resolve => console.log(resolve))
+.catch(error => console.log(error.message));

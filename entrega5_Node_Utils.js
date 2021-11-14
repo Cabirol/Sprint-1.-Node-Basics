@@ -6,27 +6,29 @@ function exercici1(){
     }, 1000, "Ha passat un segon");
 }
 
-//exercici1()
-  
-
-
 //Nivell 1, Exercici 2 *************************************
 
 const fs = require('fs');
 
-function crearFitxerNom(nom){
-    fs.writeFile('nom_usuari.txt', nom, (err) => {
+function escriureFrase(_frase){
+    fs.appendFile('fitxer_exemple.txt', _frase, (err) => {
         if (err) return console.log(err);
-        console.log("S'ha creat 'nom_usuari.txt'.");
+        console.log(`S'ha escrit: "${_frase}" a 'fitxer_exemple.txt'.`);
     });
 }
-
-//crearFitxerNom("Daniel");
-
+//escriureFrase("Bon dia pel dematí.");
 //Nivell 1, Exercici 3 *************************************
 
 function llegirFitxer(nomFitxer){
     console.log(fs.readFileSync(nomFitxer, "utf8"));
 }
+llegirFitxer('fitxer_exemple.txt');
+//Nivell 2, Exercici 1 *************************************
 
-//llegirFitxer("nom_usuari.txt");
+//Crea una funció que comprimeixi el fitxer del nivell 1.
+/*const zlib = require('zlib');
+
+const gzip = zlib.createGzip();*/
+
+/*Crea una funció que llisti per la consola
+el contingut del directori d'usuari de l'ordinador utilizant Node Child Processes.*/
