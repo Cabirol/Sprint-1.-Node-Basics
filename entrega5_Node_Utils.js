@@ -22,13 +22,15 @@ function escriureFrase(_frase){
 function llegirFitxer(nomFitxer){
     console.log(fs.readFileSync(nomFitxer, "utf8"));
 }
-llegirFitxer('fitxer_exemple.txt');
+//llegirFitxer('fitxer_exemple.txt');
 //Nivell 2, Exercici 1 *************************************
 
-//Crea una funció que comprimeixi el fitxer del nivell 1.
-/*const zlib = require('zlib');
+const zlib = require('zlib');
 
-const gzip = zlib.createGzip();*/
+const gzip = zlib.createGzip();
+const input = fs.createReadStream('fitxer_exemple.txt');
+const output = fs.createWriteStream('fitxer_exemple.txt.gz');
+input.pipe(gzip).pipe(output);
 
 /*Crea una funció que llisti per la consola
 el contingut del directori d'usuari de l'ordinador utilizant Node Child Processes.*/
