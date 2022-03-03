@@ -50,7 +50,7 @@ async function llista(id){
 
 async function principal(_parametre){
     let result = await auxiliar(_parametre);
-    console.log(result);
+    return console.log(result);
 }
 
 function auxiliar(_parametre){
@@ -62,7 +62,4 @@ function auxiliar(_parametre){
     });
 }
 
-//Nivell 3 Exercici 1 **************************************************************
-
-llista(4).catch(error => console.log(error.message));
-principal(false).catch(error => console.log(error.message));
+module.exports = {getEmployee, getSalary, principal, auxiliar};

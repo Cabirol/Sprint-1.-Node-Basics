@@ -83,3 +83,5 @@ getEmployee(4)
 .then(resolve => getSalary(resolve))
 .then(resolve => console.log(resolve))
 .catch(error => console.log(error.message));
+
+module.exports = {getEmployee, getSalary};
